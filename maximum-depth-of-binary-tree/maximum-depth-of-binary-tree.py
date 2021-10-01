@@ -5,19 +5,17 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
-    def levelorder(self, root, count):
-        if root:
-            if root.left == None and root.right == None:
-                return count 
-            count = max(self.levelorder(root.left,count+1),self.levelorder(root.right,count+1))
-        return count
+    def __init__(self):
+        self.maxmdepth = 0
         
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
-        count = 0
+    def maxDepth(self, root: Optional[TreeNode],depth = 1) -> int:
+        
+        # recursively going to the depth of the binary tree 
+        # depth variable stores the current depth of the binary tree untill it reaches last leaf
+        # maximum depth stores the maximum depth of the binary tree
         if root:
-            count = count + 1
-            k = self.levelorder(root,count)
-            return k
-        else:
-            return count
+            self.maxmdepth = max(depth,self.maxmdepth)
+            self.maxDepth(root.left,depth+1)
+            self.maxDepth(root.right,depth+1)
+        
+        return self.maxmdepth
