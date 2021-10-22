@@ -1,8 +1,8 @@
-from collections import OrderedDict
+
 class Solution:
     def frequencySort(self, s: str) -> str:
         
-        hm = OrderedDict()
+        hm = dict()
         result = ''
         for i in range(0,len(s)):
             if s[i] in hm:
@@ -13,9 +13,8 @@ class Solution:
         hm = dict(sorted(hm.items(), key=lambda item: item[1]))
         
         for i in hm:
-            while(hm[i] != 0):
-                result = i + result
-                hm[i] = hm[i] - 1
+            result = i*hm[i] + result
+
         
         return result
         
