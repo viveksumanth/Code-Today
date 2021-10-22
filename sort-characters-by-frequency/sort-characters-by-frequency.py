@@ -1,21 +1,30 @@
+# sort by frequency heap
 
+import heapq
+from collections import Counter
 class Solution:
     def frequencySort(self, s: str) -> str:
+        freq = Counter(s)
+        maxheap = []
+        result = []
         
-        hm = dict()
-        result = ''
-        for i in range(0,len(s)):
-            if s[i] in hm:
-                hm[s[i]] = hm[s[i]] + 1
-            else:
-                hm[s[i]] = 1
+        for i in freq:
+            heapq.heappush(maxheap, (freq[i]*(-1),i))
         
-        hm = dict(sorted(hm.items(), key=lambda item: item[1]))
+        # print(maxheap)
+        for i in range(len(maxheap)):
+            sub = heapq.heappop(maxheap)
+            result.append(-1* sub[0]*sub[1])
         
-        for i in hm:
-            result = i*hm[i] + result
-
+        return ''.join(result)
+            
         
-        return result
+        
+            
+        
+        
+        
+        
+        
         
         
