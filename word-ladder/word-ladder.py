@@ -1,3 +1,4 @@
+from collections import deque
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         
@@ -15,7 +16,7 @@ class Solution:
         
         def bfs(beginWord, endWord, wordDict):
             
-            queue = [beginWord]
+            queue = deque([beginWord])
             steps = 1
             usedWords = set()
             usedWords.add(beginWord)
@@ -24,7 +25,7 @@ class Solution:
                 
                 for i in range(0,len(queue)):
                     
-                    curr_word = queue.pop(0)
+                    curr_word = queue.popleft()
 
                     if curr_word == endWord:
                         return steps
