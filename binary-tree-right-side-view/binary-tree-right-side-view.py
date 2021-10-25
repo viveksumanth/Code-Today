@@ -23,9 +23,10 @@ class Solution:
         
         queue = [root]
         rightview = []
+        
         while(len(queue)):
-            
-            currentLevel = []
+
+            rightview.append(queue[-1].val)
             
             for i in range(0,len(queue)):
                 
@@ -35,10 +36,7 @@ class Solution:
                 
                 for child in children:
                     queue.append(child)
-                
-                currentLevel.append(node.val)
-            
-            rightview.append(currentLevel[-1])
+
         
         return rightview
     
