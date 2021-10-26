@@ -10,12 +10,12 @@ class Solution:
         
     def maxDepth(self, root: Optional[TreeNode],depth = 1) -> int:
         
-        # recursively going to the depth of the binary tree 
-        # depth variable stores the current depth of the binary tree untill it reaches last leaf
-        # maximum depth stores the maximum depth of the binary tree
-        if root:
-            self.maxmdepth = max(depth,self.maxmdepth)
-            self.maxDepth(root.left,depth+1)
-            self.maxDepth(root.right,depth+1)
+        if root == None:
+            return 0
         
-        return self.maxmdepth
+        left = self.maxDepth(root.left)
+        right = self.maxDepth(root.right)
+        
+        return max(left,right) + 1
+        
+        
