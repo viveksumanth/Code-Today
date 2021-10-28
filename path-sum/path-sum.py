@@ -6,23 +6,23 @@
 #         self.right = right
 class Solution:
     def __init__(self):
-        self.flag = False
-        
+        self.haspathsum = False
+    
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
         
         if root == None:
-            return self.flag
+            return 
         
-        if root:
-            if targetSum == root.val and root.left == None and root.right == None:
-                self.flag = True
-            self.hasPathSum(root.left, targetSum - root.val)
-            self.hasPathSum(root.right, targetSum - root.val)
         
-        return self.flag
+        if targetSum == root.val and root.left == None and root.right == None:
+            self.haspathsum = True
             
-            
-            
-            
-            
+
+        self.hasPathSum(root.left, targetSum - root.val)
+        self.hasPathSum(root.right, targetSum - root.val)
+        
+        return self.haspathsum
+        
+        
+        
         
