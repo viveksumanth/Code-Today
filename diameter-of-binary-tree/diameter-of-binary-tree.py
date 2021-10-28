@@ -4,24 +4,44 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
-    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        self.result = 0
+'''
         
-        def recursion(root):
-            
+                1
+               / \  
+             2     3
+            /    /  \
+           4    5    6 
+          / \
+         8   9
+             /           
+            7
+           / 
+         11
+         /
+       13
+       /
+     14
+     
+'''
+class Solution:
+
+    def __init__(self):
+        
+        self.maxm = 0
+        
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        
+        def dfs(root):
             if root == None:
                 return 0
+            
+            left = dfs(root.left)
+            right = dfs(root.right)
+            self.maxm = max(self.maxm, left+right)
+            
+            return max(left,right)+ 1
 
-            if root:
+        dfs(root)
+        return self.maxm 
 
-                ldepth = recursion(root.left)
-                rdepth = recursion(root.right)
-                print(root.val, ldepth,rdepth)
-                
-                self.result = max(self.result,rdepth + ldepth)
-                return max(ldepth,rdepth) + 1
-                
-        (recursion(root))
-        return self.result
-        
+    
