@@ -2,19 +2,30 @@ class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
+        
+        zerocount = 2
+        
+        1,0,2,0,4,0,2,3,0 
+        
+        1,2,4,2,3,0,2,3,0 
+                         l 
+                 r
         """
         
-        i = 0
-        j = 0
+        zeroCount = 0
+        fastPointer = 0
+        slowPointer = 0
         
-        while(j < len(nums)):
+        for fastPointer in range(0,len(nums)):
             
-            if nums[j] == 0:
-                j = j + 1
+            if nums[fastPointer]!= 0:
+                nums[slowPointer] = nums[fastPointer]
+                slowPointer += 1
+        
+        for i in range(slowPointer, len(nums)):
+            nums[i] = 0
+    
+                
 
-            else:   
-                a = nums[i]
-                nums[i] = nums[j]
-                nums[j] = a
-                i = i + 1
-                j = j + 1
+                
+                
