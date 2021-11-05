@@ -1,21 +1,39 @@
 class Solution:
     def isValid(self, string: str) -> bool:
-        hm = {'[':']', '{':'}', '(':')'}
+        '''
+        { '(' : ')', '{' :'}', '[' : ']' }
+        
+        [({)}]
+        
+        [ ] ) }]
+        
+        
+        when stack is empty then string is balanced
+        
+        '''
+        
         stack = []
-        allbrackets = '{[()]}'
-        for i in range(len(string)):
-
-            if string[i] not in stack and string[i] in hm.keys():
-                stack.append(hm[string[i]])
-            elif string[i] in stack:
-                if stack[-1] == string[i]:
-                    stack.pop(-1)
+        
+        lookup = { '(' : ')', '{' :'}', '[' : ']' }
+        
+        closingBrackets = ')}]'
+        
+        for bracket in string:
+            
+            if bracket in lookup: #check opening bracket and append closing bracket
+                
+                stack.append(lookup[bracket])
+            
+            elif bracket in closingBrackets: # check if bracket in closing bracket
+                
+                # if last element in bracket is not equal to bracket that means we encouterd wrong
+                # sequence
+                if stack and stack[-1] == bracket:
+                    stack.pop()
                 else:
                     return False
-            elif string[i] not in hm.keys() and string[i] in allbrackets:
-                return False
-
-        if len(stack) == 0:
-            return True
-        return False
         
+        if len(stack):
+            return False
+        
+        return True
