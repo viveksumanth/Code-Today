@@ -1,28 +1,31 @@
 class Solution:
+    
+    def dfs(self,letterList, memo, s, idx):
+        
+        current = s[idx::]
+
+        if idx == len(s):
+            return 1
+        
+        if current in memo:
+            return memo[current]
+        
+        total = 0
+        for number in letterList:
+            if current.startswith(number):
+                total +=  self.dfs(letterList, memo, s, idx+len(number))
+                memo[current] = total
+                
+        return total
+                
     def numDecodings(self, s: str) -> int:
         
-        letterlist = [str(i) for i in range(1,27)]
+        letterList = [str(i) for i in range(1,27)]
         memo = {}
+        return self.dfs(letterList, memo, s, 0)
         
-        def dfs(start):
-
-            if start == len(s):
-                return 1
-            
-            if start in memo:
-                return memo[start]
-            
-            remaining = s[start::]
-            ways = 0
-            
-            for each in letterlist:
-                if remaining.startswith(each):
-                    ways += dfs(start+len(each))
-                    memo[start] = ways
-            
-            return ways
         
-        return dfs(0)
+        
         
         
         
