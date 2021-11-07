@@ -5,10 +5,11 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def generate_children(self,node):
+    def generateChildren(self,node):
         children = []
         
         if node:
+            
             if node.left:
                 children.append(node.left)
             if node.right:
@@ -16,29 +17,43 @@ class Solution:
         
         return children
     
+        # explores levels
+    def levelOrderTraversal(self, root):
+
+      queue = deque()
+      queue.append(root)      # [3]
+      rightSideView = []      # [1]
+
+      while(len(queue)):
+
+        temp = []
+        # moves in the level 
+        for level in range(0,len(queue)):
+
+          #current node
+          node = queue.popleft()  # 1, 3
+
+          children = self.generateChildren(node)
+
+          temp.append(node.val)   # temp = [3]
+          # moves in children
+          for child in children:
+            queue.append(child)
+
+        rightSideView.append(temp[-1])
+
+      return rightSideView
+    
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         
-        if root == None:
-            return []
-        
-        queue = [root]
-        rightview = []
-        
-        while(len(queue)):
+      if root == None:
+        return []
 
-            rightview.append(queue[-1].val)
-            
-            for i in range(0,len(queue)):
-                
-                node = queue.pop(0)
-                
-                children = self.generate_children(node)
-                
-                for child in children:
-                    queue.append(child)
+      rightSideView = self.levelOrderTraversal(root)
+
+      return rightSideView
 
         
-        return rightview
     
                 
         
