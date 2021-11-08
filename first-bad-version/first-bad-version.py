@@ -3,33 +3,38 @@
 # @return an integer
 # def isBadVersion(version):
 
+'''
+1,2,3,4,5,6,7,8
+'''
 class Solution:
     def firstBadVersion(self, n):
         """
         :type n: int
         :rtype: int
         """
-
-        def binarysearch(l,r):
-            
-            m = (l + r)//2
-            # print(l,r,m,isBadVersion(m))
-            
-            if r >= l:
-                
-                if isBadVersion(m) == True and isBadVersion(m-1) == True:
-
-                    return binarysearch(l,m)
-                
-                elif isBadVersion(m) == False:
-                    return binarysearch(m+1,r)
-                    
-                elif isBadVersion(m) == True and isBadVersion(m-1) == False:
-                    return m
-                
-            return -1
+        leftIdx = 0
+        rightIdx = n
         
-        return binarysearch(1,n)
+        while(leftIdx <= rightIdx):
+            
+            midIdx = (leftIdx + rightIdx)//2
+            
+            if isBadVersion(midIdx) == True:
+                
+                if midIdx == 0 or isBadVersion(midIdx-1) == False:
+                    return midIdx
+                
+                elif isBadVersion(midIdx - 1) == True:
+                    rightIdx = midIdx - 1
+            
+            if isBadVersion(midIdx) == False:
+                leftIdx = midIdx + 1
+            
+        return -1
+                    
+            
+        
+        
         
         
         
