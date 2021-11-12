@@ -15,14 +15,16 @@ class Solution:
     '''
     def findSubsets(self, nums, ps, solutions, start):
         
-        if ps[:] not in solutions:
-            solutions.append(ps[:])
+        
+        solutions.append(ps[:])
         
         if len(ps) == len(solutions):
             return
         
         for idx in range(start,len(nums)):
-            
+            if idx > start and nums[idx - 1] == nums[idx]:
+                continue
+                
             ps.append(nums[idx])
             self.findSubsets(nums, ps, solutions, idx+1)
             ps.pop()
