@@ -1,0 +1,71 @@
+from collections import defaultdict
+class Solution:
+    def generateChildren(self,courses,node):
+        
+        children = []
+        
+        for eachCourse in courses[node]:
+            children.append(eachCourse)
+        
+        return children
+    
+    def countCourses(self, courses):
+        coursesCount = {node:0 for node in courses}
+
+        for eachPreq in courses:
+            for eachCourse in courses[eachPreq]:
+                coursesCount[eachCourse] += 1
+
+        
+        return coursesCount
+    
+    def topoSort(self,courses):
+        
+        coursesCount = self.countCourses(courses)
+        queue = []
+        result = []
+        for eachCourse in coursesCount:
+            if coursesCount[eachCourse] == 0:
+                queue.append(eachCourse)
+        
+        while(len(queue)):
+            
+            node = queue.pop(0)
+            result.append(node)
+            
+            children = self.generateChildren(courses,node)
+            
+            for eachChild in children:
+                coursesCount[eachChild] -= 1
+                
+                if coursesCount[eachChild] == 0:
+                    queue.append(eachChild)
+                    
+        return result
+    
+    def canFinish(self, numCourses: int, prereq: List[List[int]]) -> bool:
+        courses = defaultdict(list)
+        
+        if len(prereq)  == 0:
+            return True
+        
+        for eachPreq in prereq:
+            
+            if eachPreq[1] == eachPreq[0]:
+                return False
+            
+            courses[eachPreq[1]].append(eachPreq[0])
+            if eachPreq[0] not in courses:
+                courses[eachPreq[0]] = [] 
+        
+
+        result = self.topoSort(courses)
+        
+        if len(courses.keys()) != len(result):
+            return False
+        
+        return True
+        
+        
+            
+        
