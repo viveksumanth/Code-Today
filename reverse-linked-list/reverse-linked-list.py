@@ -15,6 +15,7 @@ class Solution:
         
         
         '''
+        '''
         
         if head == None:
             return None
@@ -29,3 +30,15 @@ class Solution:
             current = temp
         
         return prev
+        
+        '''
+        
+        if head == None or head.next == None:
+            return head
+        
+        p = self.reverseList(head.next)
+        head.next.next = head
+        head.next = None
+        return p
+    
+    
