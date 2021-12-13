@@ -1,32 +1,32 @@
 class Solution:
-
-    def powerXN(self,power,value):
-
-        if power == 0:
-            return 1
-
-        if value == 0:
-            return 0
-
-        if power == 1:
-            return value
-
-        answer = self.powerXN(power//2, value)
-
-        if power%2 == 0:
-            return answer*answer
-        
-        return answer*answer *value
-            
-        
-    def myPow(self, x: float, n: int) -> float:
+    def myPow(self, x: float, n: int, result = 1) -> float:
         
         '''
-        divide and conquer
+        
+        x^n = x * x ... n
+        
+         10
+         
+        
         '''
         if n < 0:
             x = 1/x
             n = -(n)
-        return self.powerXN(n,x)
+            
+        if n == 0:
+            return 1
+        
+        if n == 1:
+            return x
+        
+        result = self.myPow(x,n//2)
+        
+        if n % 2 == 0:
+            result = result * result
+        else:
+            result = result * result * x
+        
+        return result
+        
         
         
