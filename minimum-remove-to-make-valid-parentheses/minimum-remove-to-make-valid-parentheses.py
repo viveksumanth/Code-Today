@@ -1,5 +1,5 @@
 class Solution:
-    def minRemoveToMakeValid(self, s: str) -> str:
+    def minRemoveToMakeValid(self, stringx: str) -> str:
         '''
         hm = { ( : ) } closingbracket = )
         
@@ -12,10 +12,13 @@ class Solution:
         ( : [0, 1]
         
         -> using a default dict to store the posisitions of the opened brackets 
+        
         -> conditions:
-            -> if you encounter ) and defaultdict[ ( ] is empty which means that we have to remove them because 
-            we dont need them
+            -> if you encounter ) and defaultdict[ ( ] is empty 
+            which means that we have to remove them because we dont need them
+            
             -> if you encounter ) and defaultdict[(] is not empty pop that list
+            
         -> at the end of the string check defaultdict[(] all those are extra just we need to remove them
         
         Time Complexity O(n)
@@ -23,33 +26,29 @@ class Solution:
         
         
         '''
-        s = list(s)
-        lookup = { '(' : []}
-        i = 0
-        
-        while(i <= len(s) - 1):
-            
-            if s[i] == '(':
-                lookup['('].append(i)
-                
-            elif s[i] == ')':
-                
-                if len(lookup['(']):
-                    lookup['('].pop()
-                
-                elif len(lookup['(']) == 0:
 
-                    s = s[:i] + s[i+1::]
-                    i = i - 1
-            
-            i = i + 1
-        
-        if len(lookup['(']):
-            for idx in lookup['(']:
-                s[idx] = ''
-        
-        s = ''.join(s)
-        return s
+        stack = []
+        lookup = '('
+        stringx = list(stringx)
+
+        for idx in range(0,len(stringx)):
+
+            if stringx[idx] == ')' and stack:
+                stack.pop()
+
+            elif stringx[idx] == ')' and not stack:
+                stringx[idx] = ''
+
+            elif stringx[idx] == '(':
+                stack.append((idx,'('))
+
+        for idx in range(0,len(stack)):
+            changeIndex = stack[idx][0]
+            stringx[changeIndex] = ''
+
+        return ''.join(stringx)
+
+
             
                     
             
