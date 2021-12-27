@@ -5,46 +5,26 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    '''
-    do inorder traversal Left Root Right and find the low when low is found we start adding untill we 
-    find the high.
-    inorder traversal going from left to right gives numbers in ascending order
-    
-    why shouldn't I pass in a function why should I do globally?
-    
-    '''
-    
     def __init__(self):
-        self.currentSum = 0
-        self.flag = False
-
-    def rangeSumBSTHelper(self, root, low, high):
+        self.rangeSum = 0
         
+    def rangeSumBSTHelper(self,root,low,high):
         
         if root == None:
             return
         
-        self.rangeSumBSTHelper(root.left, low, high)
-        
-        if self.flag == True:
-            self.currentSum += root.val
+        if low <= root.val and root.val <= high:
+            self.rangeSum += root.val
             
-        if root.val == low:
-            self.flag = True
-            self.currentSum = root.val
+        if root.val > low:
+            self.rangeSumBSTHelper(root.left,low,high)
         
-        if root.val == high:
-            self.flag = False
-            return 
+        if root.val < high:
+            self.rangeSumBSTHelper(root.right,low,high)
+        
+        return
 
-        self.rangeSumBSTHelper(root.right, low, high)
-        
-        return 
-
-            
-            
     def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
         
-        self.rangeSumBSTHelper(root, low, high)
-        return self.currentSum
-    
+        self.rangeSumBSTHelper(root,low,high)
+        return self.rangeSum
