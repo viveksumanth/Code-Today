@@ -22,24 +22,10 @@ class Solution:
         midIdx = (left + right)//2
         midNode = self.treeArray[midIdx]
         
-        if root == None:
-            root = TreeNode(midNode)
-            
-        else:
+        root = TreeNode(midNode)
+        root.left = self.makeTree(left,midIdx-1,root)
+        root.right = self.makeTree(midIdx+1,right,root)
 
-            if midNode > root.val:
-                root.right = TreeNode(midNode)
-                root = root.right
-
-            elif midNode <= root.val:
-                root.left = TreeNode(midNode)
-                root = root.left
-#             else:
-#                 root.right = None
-                    
-        self.makeTree(left,midIdx-1,root)
-        self.makeTree(midIdx+1,right,root)
-        
         return root
             
             
