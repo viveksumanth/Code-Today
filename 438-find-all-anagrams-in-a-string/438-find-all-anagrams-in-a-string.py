@@ -1,10 +1,3 @@
-'''
-    |
-    c b a e b a b a c d
-        |
-
-
-'''
 
 
 from collections import Counter
@@ -20,9 +13,7 @@ class Solution:
         current = 0
         
         for eachIdx in range(0,len(string)):
-            
-            if newHm == tem:
-                result.append(abs(windowSize - eachIdx))
+
                 
             while(eachIdx - current + 1 > windowSize):
                 letter = string[current]
@@ -43,11 +34,10 @@ class Solution:
             else:
                 newHm[letter] = 1
                 
-        if newHm == tem:
-            result.append(abs(windowSize - eachIdx - 1))   
+            if newHm == tem:
+                result.append(abs(windowSize - eachIdx - 1))  
+                
 
-
-            
         return result
                 
                 
