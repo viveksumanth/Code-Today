@@ -9,15 +9,15 @@ class Solution:
         
         '''
         
-        while(x<len(nums)):
+#         while(x<len(nums)):
             
-            if nums[x] <= 0:
-                del nums[x]
-                continue
-            x = x+1 
+#             if nums[x] <= 0:
+#                 del nums[x]
+#                 continue
+#             x = x+1 
         
-        if len(nums) == 0:
-            return 1
+#         if len(nums) == 0:
+#             return 1
         
         
         while(index < len(nums)):
@@ -35,6 +35,7 @@ class Solution:
 
             if nums[eachIndex] != eachIndex + 1:
                 return eachIndex + 1
+            
         return max(nums) + 1
                 
                 
