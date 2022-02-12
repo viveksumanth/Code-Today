@@ -1,3 +1,10 @@
+
+'''
+
+find the shortest distance from sourcenode to every other node.
+
+'''
+
 import heapq
 def getChildren(node,edges):
     
