@@ -6,8 +6,8 @@ class Solution:
     def combinationSumHelper(self,nums,target,ps):
         
 
-        if sum(ps) > target:
-            return
+#         if sum(ps) > target:
+#             return
         
         if sum(ps) == target:
             newPs = tuple(ps)
@@ -18,7 +18,7 @@ class Solution:
             
             currentNum = nums[eachIdx]
             
-            if eachIdx > 0 and nums[eachIdx-1] == nums[eachIdx]:
+            if eachIdx > 0 and nums[eachIdx-1] == nums[eachIdx] or sum(ps) > target:
                 continue
                 
             self.combinationSumHelper(nums[eachIdx+1::],target,ps + [currentNum])
