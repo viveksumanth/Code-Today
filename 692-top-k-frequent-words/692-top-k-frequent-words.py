@@ -1,28 +1,23 @@
 from collections import Counter
-
+import heapq
 class Solution:
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
-        
-        lookup = Counter(words)
-        newList = []
+        wordCount = Counter(words)
+        wordHeap = []
         result = []
         
-        for eachKey in lookup:
-            newList.append([-1*lookup[eachKey],eachKey])
-        
-        heapq.heapify(newList)
-        
-        
-        for eachWordIdx in range(0,k):
-            frequency,currentWord = heapq.heappop(newList)
+        for eachWord in wordCount:
+            heapq.heappush(wordHeap,[-1*wordCount[eachWord], eachWord])
+                                              
+        for i in range(0,k):
             
-            result.append(currentWord)
+            count,word = heapq.heappop(wordHeap)
+            result.append(word)
         
         return result
-        
-        
-        
-        
-                
+                                     
+            
+            
+            
         
         
