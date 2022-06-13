@@ -32,11 +32,11 @@ class Solution:
         
         k= length - (k%length)
             
-        while(k):
-            tempHead = tempHead.next
+        while(k-1):
+            head = head.next
             k -= 1
 
-        newHead = tempHead.next
-        tempHead.next = None
+        newHead = head.next
+        head.next = None
         
         return newHead
