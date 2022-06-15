@@ -1,36 +1,28 @@
-	# diffs = [b-a for a, b in zip(A, A[1:])]
-	# l = r = cnt = 0  # left, right pointers and counter
-	# while r < len(diffs):
-	# 	if diffs[r] == diffs[l]: 
-	# 		cnt += r - l
-	# 	else: 
-	# 		l = r
-	# 	r += 1
-	# return cnt
-
 class Solution:
     def numberOfArithmeticSlices(self, nums: List[int]) -> int:
-        
-        store = []
-        count = 0
-        
-        for idx in range(1,len(nums)):
-            store.append(nums[idx] - nums[idx - 1])
 
-        pointer = 0
-        newIdx = 1
-
-        while(newIdx < len(nums) - 1):
-
-            if store[newIdx-1] == store[newIdx]:
-                count += newIdx - pointer
-            else:
-                pointer = newIdx
+        if len(nums) > 2:
+            prev = nums[0] - nums[1]
             
-            newIdx += 1
-            
-        return count
+        count = 1
+        totalSlices = 0
         
+        for eachIdx in range(2,len(nums)):
+            curr = nums[eachIdx - 1] - nums[eachIdx]
+
+            if prev != curr:
+                count += 1
+                totalSlices += ((count-2)*(count-1))//2
+                prev = curr
+                count = 1
+                
+            else: 
+                count += 1
+        
+        count += 1
+        totalSlices += ((count-2)*(count-1))//2
+        
+        return totalSlices
         
                     
                 
