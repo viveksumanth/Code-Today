@@ -1,23 +1,26 @@
 class Solution:
     def removeDuplicates(self, s: str, k: int) -> str:
+        '''
+        
+        s = deeedbbcccbdaa
+        
+        stack = [[a,2]]
+        
+        
+        '''
         
         stack = []
-        newword = ''
-        for each in s:
+        newString = ''
+        for eachChar in s:
             
-            if (stack and stack[-1][0] == each):
+            if stack and stack[-1][0] == eachChar:
                 stack[-1][1] += 1
                 if stack[-1][1] == k:
                     stack.pop()
-                     
             else:
-                
-                stack.append([each,1])
+                stack.append([eachChar,1])
         
         for each in stack:
-            newword += each[0]*each[1]
+            newString += each[0]*each[1]
         
-        return newword
-                
-                
-                
+        return newString
