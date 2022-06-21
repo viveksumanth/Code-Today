@@ -1,24 +1,24 @@
 class Solution:
     def __init__(self):
-        self.solutions = []
+        self.allSets = []
         
-    def dfs(self,nums,startIdx,ps):
-
-        self.solutions.append(ps)
+    def makeSubsets(self,nums,currentSet,start):
+        self.allSets.append(currentSet[:])
         
-        if startIdx == len(nums):
-            return
+        if len(currentSet) == len(nums):
+            return 
         
-        
-        for eachIdx in range(startIdx,len(nums)):
-            
-            self.dfs(nums,eachIdx+1,ps+[nums[eachIdx]])
+        for each in range(start,len(nums)):
+            currentSet.append(nums[each])
+            self.makeSubsets(nums,currentSet,each+1)
+            currentSet.pop()
         
         return 
-    
+        
         
     def subsets(self, nums: List[int]) -> List[List[int]]:
         
-
-        self.dfs(nums,0,[])
-        return self.solutions
+        currentSet = []
+        self.makeSubsets(nums,currentSet,0)
+        
+        return self.allSets
