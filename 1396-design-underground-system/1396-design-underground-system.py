@@ -1,28 +1,32 @@
-
 from collections import defaultdict
 class UndergroundSystem:
 
     def __init__(self):
-        
-        self.checkInDict = defaultdict()
-        self.routeTime = defaultdict(dict)
+        self.checkin = defaultdict(dict)
+        self.AtoB = defaultdict(lambda: defaultdict(list))
         
     def checkIn(self, id: int, stationName: str, t: int) -> None:
-        self.checkInDict[id] = (stationName,t)
+        
+        # self.checkin[id][stationName] = t
+        self.checkin[id] = (stationName,t)
+        
 
     def checkOut(self, id: int, stationName: str, t: int) -> None:
-        startStation, startTime = self.checkInDict[id]
         
-        if stationName in self.routeTime[startStation]:
-            self.routeTime[startStation][stationName].append(t-startTime)
-        else:
-            self.routeTime[startStation][stationName] = []
-            self.routeTime[startStation][stationName].append(t-startTime)
+        for each in self.checkin[id]:
+            startTime  = self.checkin[id][1]
+            self.AtoB[each][stationName].append([t - startTime])
+        
+        # print(self.AtoB)
 
     def getAverageTime(self, startStation: str, endStation: str) -> float:
+        totalTime = 0
+        numOfPeople = len(self.AtoB[startStation][endStation])
+        for eachOne in self.AtoB[startStation][endStation]:
+            totalTime += eachOne[0]
         
-        alltimes = self.routeTime[startStation][endStation]
-        return sum(alltimes)/len(alltimes)
+        return totalTime/numOfPeople
+            
 
 # Your UndergroundSystem object will be instantiated and called as such:
 # obj = UndergroundSystem()
