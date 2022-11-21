@@ -1,7 +1,7 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         
-        List<List<String>> result = new ArrayList<List<String>>();
+
         Map<String, List<String>> map = new HashMap<>();
         String sortedWord;
         char[] tempArray;
