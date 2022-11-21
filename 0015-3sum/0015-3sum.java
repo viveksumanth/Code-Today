@@ -26,7 +26,8 @@ class Solution {
                 
                 if(nums[l] + nums[r] + req == 0){
                    result.add(Arrays.asList(nums[l],nums[r],req));
-                   r = r - 1;
+                   r -= 1;
+                    
                 }else if (nums[l] + nums[r] + req < 0)
                     l += 1;
                 else
