@@ -9,13 +9,22 @@ class Solution:
         self.result = []
         
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result = []
+        
         if root is None:
-            return 
+            return result
         
-        self.result.append(root.val)
-        self.preorderTraversal(root.left)
-        self.preorderTraversal(root.right)
+        stack = [root]
         
-        return self.result
+        while(stack):
+            currentNode = stack.pop()
+            result.append(currentNode.val)
+            
+            if currentNode.right != None:
+                stack.append(currentNode.right)
+            if currentNode.left != None:
+                stack.append(currentNode.left)
+        
+        return result
     
         
