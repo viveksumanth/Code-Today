@@ -1,6 +1,7 @@
 class Solution:
     '''
-    stop thinking BFS or DFS!!! 
+    * Stop thinking BFS or DFS!!! 
+    * Calculate how much we can move diagonally and how much we need to move straight.
     '''
     def isReachableAtTime(self, sx: int, sy: int, fx: int, fy: int, t: int) -> bool:    
         height = abs(sx - fx)
@@ -8,34 +9,17 @@ class Solution:
         moveDiagonally = min(height, width)
         moveStraight = abs(height - width)
         distance = moveDiagonally + moveStraight
-        # print(moveDiagonally, moveStraight)
+        
         if distance == 0 and t == 1:
             return False
         if distance <= t:
             return True
         return False
+
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-#     def getChildren(self, currentPlace, target):
+#  Approach works. But, way too complicated for the problem. 
+
+#   def getChildren(self, currentPlace, target):
 #         currentRow, currentCol = currentPlace
 #         targetRow, targetCol = target
 #         deltaRow = [-1, -1, -1, 0, 1, 1, 1, 0]
