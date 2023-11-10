@@ -19,31 +19,18 @@ class Solution:
         lookup = defaultdict(list)
         count = dict()
         firstDigit = None
-        lastDigit = None
+        result = []
         
         for eachAdjPair in adjPairs:
             firstNum, secondNum = eachAdjPair
-            if firstNum not in count:
-                count[firstNum] = 1
-            else:
-                count[firstNum] += 1
-            
-            if secondNum not in count:
-                count[secondNum] = 1
-            else:
-                count[secondNum] += 1
-            
             lookup[firstNum].append(secondNum)
             lookup[secondNum].append(firstNum)
         
-        for eachNum in count:
-            if count[eachNum] == 1:
-                if firstDigit == None:
-                    firstDigit = eachNum
-                else:
-                    lastDigit = eachNum
-        
-        result = []
+        for each in lookup:
+            if len(lookup[each]) == 1:
+                firstDigit = each
+                break
+
         queue = [firstDigit]
         while(len(queue)):
             currentDigit = queue.pop()
