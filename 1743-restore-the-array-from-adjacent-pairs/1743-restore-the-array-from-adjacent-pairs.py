@@ -17,7 +17,6 @@ class Solution:
         '''
         used = set()
         lookup = defaultdict(list)
-        count = dict()
         firstDigit = None
         result = []
         
