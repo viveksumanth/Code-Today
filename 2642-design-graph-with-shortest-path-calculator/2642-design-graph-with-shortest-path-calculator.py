@@ -1,5 +1,6 @@
 from collections import defaultdict
 import heapq
+
 class Graph:
 
     def __init__(self, n: int, edges: List[List[int]]):
@@ -12,9 +13,6 @@ class Graph:
     def addEdge(self, edge: List[int]) -> None:
             startNode, destinationNode, weight = edge
             self.edges[startNode].append([destinationNode, weight])  
-
-    def getChildren(self, currentNode):
-        return self.edges[currentNode]
     
     #Dijkshtra's Algorithm.
     def shortestPath(self, node1: int, node2: int) -> int:
@@ -25,9 +23,8 @@ class Graph:
         
         while(len(minHeap)):
             currentNode, nodeDistance = heapq.heappop(minHeap)
-            children = self.getChildren(currentNode)
             
-            for eachChild in children:
+            for eachChild in self.edges[currentNode]:
                 newNode, distanceToNewNode = eachChild
                 distance = distanceToNewNode + nodeDistance
                 
