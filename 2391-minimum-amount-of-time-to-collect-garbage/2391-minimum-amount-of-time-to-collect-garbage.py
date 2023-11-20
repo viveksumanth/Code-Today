@@ -3,44 +3,41 @@ from collections import Counter
 
 class Solution:
     def garbageCollection(self, garbage: List[str], travel: List[int]) -> int:
-        houseToGarbageLookup = defaultdict(dict)
-        garbageToHouseLookup = defaultdict(set)
-        result = 0
-        
         #make dataset
         '''
-        houseToGarbageLookup ->
-        House:{GarbageType:Count}
+        maximumDistance
         {
-        0: {g:1}
-        1: {p:1}
-        2: {g:1,p:2}
-        3: {g:2}
+        G:
+        P:
+        M: maximumHouse we need to travel to collect this garbage
         }
         
-        garbageToHouseLookup ->
-        Garbage:[House]
+        Amount of Crap
         {
-        g:[0,2,3]
-        p:[1,2]
+        G:
+        P:
+        M: 
         }
-        
-        
         '''
+        result = 0
+        maximumDistance = dict()
+        crapAmount = dict()
+        distancePrefix = list()
         
-        for eachHouse in range(0, len(garbage)):
-            houseToGarbageLookup[eachHouse] = Counter(garbage[eachHouse])
-            for eachCrap in houseToGarbageLookup[eachHouse]:
-                    garbageToHouseLookup[eachCrap].add(eachHouse)
+        for eachHouse in range(0,len(garbage)):
+            for eachCrap in garbage[eachHouse]:
+                if eachCrap not in crapAmount:
+                    crapAmount[eachCrap] = 0
+                crapAmount[eachCrap] += 1
+                maximumDistance[eachCrap] = eachHouse
         
-        for eachCrap in garbageToHouseLookup:
-            houseList = garbageToHouseLookup[eachCrap]
-            maxHouse = max(houseList)
-            distance = sum(travel[0:maxHouse])
-            
-            for eachHouse in houseList:
-                crapCount = houseToGarbageLookup[eachHouse][eachCrap]
-                result += crapCount
-            result += distance
+        distancePrefix.append(0)
+        prevSum = 0
+        for each in travel:
+            prevSum += each
+            distancePrefix.append(prevSum)
+        
+        for eachCrap in crapAmount:
+            result += crapAmount[eachCrap] + distancePrefix[maximumDistance[eachCrap]]
 
         return result
