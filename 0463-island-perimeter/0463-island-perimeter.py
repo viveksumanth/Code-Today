@@ -1,12 +1,15 @@
 class Solution:
     def __init__(self):
         self.grid = None
+        self.perimeter = 0
+        
     def getLandAndPerimeter(self, currentNode):
         xDirs = [-1,0,1,0]
         yDirs = [0,1,0,-1]
         row, col = currentNode
         perimeter = 0
         land = []
+        
         for i in range(0,len(xDirs)):
             nextRow = xDirs[i] + row
             nextCol = yDirs[i] + col
@@ -19,7 +22,7 @@ class Solution:
                 perimeter += 1
         return [perimeter, land]
     
-    def calculatePerimeter(self, currentNode, perimeter):
+    def calculatePerimeter(self, currentNode):
         
         row, col = currentNode
         if self.grid[row][col] == 2:
@@ -27,14 +30,16 @@ class Solution:
         
         self.grid[row][col] = 2
         perimeter, land = self.getLandAndPerimeter(currentNode)
+        self.perimeter += perimeter
         for eachLand in land:
-            perimeter += self.calculatePerimeter(eachLand, perimeter)
+            self.calculatePerimeter(eachLand)
         
-        return perimeter
+        return
         
     def islandPerimeter(self, grid: List[List[int]]) -> int:
         self.grid = grid
         for eachRow in range(0, len(grid)):
             for eachCol in range(0, len(grid[0])):
                 if grid[eachRow][eachCol] == 1:
-                    return self.calculatePerimeter([eachRow, eachCol], 0)
+                    self.calculatePerimeter([eachRow, eachCol])
+                    return self.perimeter
