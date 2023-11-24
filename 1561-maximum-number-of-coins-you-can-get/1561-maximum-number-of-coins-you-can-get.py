@@ -1,18 +1,12 @@
-class Solution(object):
-    def maxCoins(self, piles):
-        """
-        :type piles: List[int]
-        :rtype: int
-        """
-        result = 0
-        j = 1
-        piles.sort(reverse = True)
+class Solution:
+    def maxCoins(self, piles: List[int]) -> int:
+        piles.sort()
+        left = 0
+        right = len(piles)-1
+        maxCoins = 0
+        while(left <= right):
+            maxCoins += piles[right-1]
+            left += 1
+            right -= 2
         
-        l,r = 1,len(piles)
-        
-        while(l<r):
-            result = result + piles[l]
-            l = l + 2
-            r = r - 1
-            
-        return result
+        return maxCoins
