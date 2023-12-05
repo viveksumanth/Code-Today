@@ -15,23 +15,22 @@ class Solution:
         return neighbours
     
     def dfs(self, matrix, coordinate, memo, visited):
-        # print("coordinate: " + str(coordinate))
-        # print("memo: " + str(memo))
         if coordinate in memo:
             return memo[coordinate]
         
         neighbours = self.getNeighbours(matrix, coordinate)
-        # print("Neighbours of "+ str(coordinate) + " are " + str(neighbours))
         
         if len(neighbours) == 0:
             return 1
         
         tempPath = float("-inf")
         for each in neighbours:
-            if each not in visited:
-                visited.add(each)
-                tempPath = max(tempPath, self.dfs(matrix, each, memo, visited)+1)
-                visited.remove(each)
+            # if each in visited:
+            #     continue   
+            visited.add(each)
+            tempPath = max(tempPath, self.dfs(matrix, each, memo, visited)+1)
+            visited.remove(each)
+                
         memo[coordinate] = tempPath
         return tempPath
         
