@@ -11,7 +11,8 @@ class Solution:
             
             if 0 <= newRow < len(matrix) and 0 <= newCol < len(matrix[0]):
                 if matrix[newRow][newCol] > matrix[row][col]:
-                    neighbours.append(tuple([newRow, newCol]))  
+                    neighbours.append(tuple([newRow, newCol]))
+                    
         return neighbours
     
     def dfs(self, matrix, coordinate, memo):
@@ -19,16 +20,14 @@ class Solution:
             return memo[coordinate]
         
         neighbours = self.getNeighbours(matrix, coordinate)
-        
         if len(neighbours) == 0:
             return 1
         
         tempPath = float("-inf")
         for each in neighbours:  
             tempPath = max(tempPath, self.dfs(matrix, each, memo)+1)
-                
         memo[coordinate] = tempPath
-        return tempPath
+        return memo[coordinate]
         
     def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
         if len(matrix) == 0:
@@ -40,11 +39,9 @@ class Solution:
         for i in range(0,len(matrix)):
             for j in range(0, len(matrix[0])):
                 coordinate = tuple([i,j])
-                visited = set()
-                visited.add(coordinate)
                 longestPath = max(longestPath, 
-                                  self.dfs(matrix, coordinate, memo))
-                # print(memo)
-                # print("-----------------------")
+                                  self.dfs(matrix, 
+                                           coordinate, 
+                                           memo))
         return longestPath
     
