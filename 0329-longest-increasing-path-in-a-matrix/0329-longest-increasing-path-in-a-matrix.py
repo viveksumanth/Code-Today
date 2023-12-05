@@ -14,7 +14,7 @@ class Solution:
                     neighbours.append(tuple([newRow, newCol]))  
         return neighbours
     
-    def dfs(self, matrix, coordinate, memo, visited):
+    def dfs(self, matrix, coordinate, memo):
         if coordinate in memo:
             return memo[coordinate]
         
@@ -24,12 +24,8 @@ class Solution:
             return 1
         
         tempPath = float("-inf")
-        for each in neighbours:
-            # if each in visited:
-            #     continue   
-            visited.add(each)
-            tempPath = max(tempPath, self.dfs(matrix, each, memo, visited)+1)
-            visited.remove(each)
+        for each in neighbours:  
+            tempPath = max(tempPath, self.dfs(matrix, each, memo)+1)
                 
         memo[coordinate] = tempPath
         return tempPath
@@ -47,7 +43,7 @@ class Solution:
                 visited = set()
                 visited.add(coordinate)
                 longestPath = max(longestPath, 
-                                  self.dfs(matrix, coordinate, memo, visited))
+                                  self.dfs(matrix, coordinate, memo))
                 # print(memo)
                 # print("-----------------------")
         return longestPath
