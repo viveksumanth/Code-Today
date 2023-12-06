@@ -13,3 +13,4 @@ class Solution:
             total += numberOfWeeks + 1 + i
         return total 
         
+        # next time solve it using arthemetic sequence
