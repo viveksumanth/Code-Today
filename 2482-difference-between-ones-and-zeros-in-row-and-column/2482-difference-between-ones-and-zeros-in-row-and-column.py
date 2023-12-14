@@ -1,20 +1,5 @@
 class Solution:
     def onesMinusZeros(self, grid: List[List[int]]) -> List[List[int]]:
-        '''
-        rowLookup = {
-        0:[1,2]
-        1:[1,2]
-        2:[2,1]
-        }
-        
-        colLookup:{
-        0:[2,1]
-        1:[2,1]
-        2:[0,3]
-        }
-        
-        total = 
-        '''
         rowLookup = list()
         colLookup = list()
         rows = len(grid)
