@@ -1,12 +1,9 @@
 class Solution:
     def maxScore(self, s: str) -> int:
-        zeros = 0
         ones = 0
         
         for each in s:
-            if each == "0":
-                zeros += 1
-            else:
+            if each != "0":
                 ones += 1
         
         zerosSeen = 0
