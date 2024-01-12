@@ -20,10 +20,7 @@ class Solution {
         int minimum = Integer.MAX_VALUE;
         
         while (left < right) {
-            // System.out.println(left);
-            // System.out.println(right);
             int mid = (left + right)/2;
-            // System.out.println(mid);
             boolean foundOne = false;
             
             for (int i=0; i<rowSize; i++) {
