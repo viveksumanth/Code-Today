@@ -1,5 +1,5 @@
 class Solution {
-    private int calculate(int number1, int number2, String operation) {
+    private int calculate(final int number1, final int number2, final String operation) {
         int result = 0;
         if (operation.equals("+")) {
             result = number1+number2;
@@ -14,24 +14,22 @@ class Solution {
         return result;
     }
     
-    public int evalRPN(String[] tokens) {
+    public int evalRPN(final String[] tokens) {
         Stack<Integer> stack = new Stack<>();
-        List<String> operations = List.of("+", "-", "*", "/");
+        final List<String> operations = List.of("+", "-", "*", "/");
         
-        for (String eachToken: tokens) {
-
+        for (final String eachToken: tokens) {
             int number = 0;
             if (!operations.contains(eachToken)) {
                 number = Integer.parseInt(eachToken);
             } else {
-                int number1 = stack.pop();
-                int number2 = stack.pop();
+                final int number1 = stack.pop();
+                final int number2 = stack.pop();
                 number = calculate(number1, number2, eachToken);
             }
             stack.push(number);
         }
 
-        return stack.get(0);
-        
+        return stack.pop();   
     }
 }
