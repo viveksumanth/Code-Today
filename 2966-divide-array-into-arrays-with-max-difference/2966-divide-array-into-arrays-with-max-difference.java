@@ -2,28 +2,12 @@ class Solution {
     public int[][] divideArray(int[] nums, int k) {
         int [][] result = new int[nums.length/3][3];
         Arrays.sort(nums);
-        int subListFirstElement = -1;
-        int inListPointer = 0;
-        int outListPointer = 0;
             
-        for (int i=0; i< nums.length; i++) {
-            if (subListFirstElement == -1 || nums[i] - subListFirstElement <= k) {
-                result[outListPointer][inListPointer] = nums[i];
-                inListPointer++;
-                
-                if (subListFirstElement == -1) {
-                    subListFirstElement = nums[i];
-                }
-                
-                if (inListPointer > 2) {
-                    inListPointer = 0;
-                    subListFirstElement = -1;
-                    outListPointer++;
-                    
-                }
-            } else {
+        for (int i=0; i< nums.length; i+=3) {
+            if (nums[i+2] - nums[i] > k) {
                 return new int[0][0];
             }
+            result[i/3] = new int[]{nums[i], nums[i+2], nums[i+1]};
         }
         return result;
     }
