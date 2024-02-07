@@ -11,9 +11,7 @@ class Solution {
         int change = 0;
         
         if (s.length() > t.length()) {
-            String temp = s;
-            s = t;
-            t = temp;
+            return isOneEditDistance(t, s);
         }
         
         if (t.length() - s.length() > 1) {
@@ -38,7 +36,7 @@ class Solution {
                 }
             }
         }
-        
+        // edge case:
         if (change == 0 && (t.length() - s.length()) == 1 ) {
             return true;
         }
