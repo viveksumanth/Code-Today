@@ -1,35 +1,32 @@
 class Solution {
     public String frequencySort(String s) {
-        HashMap<Character,Integer> lookup = new HashMap<Character,Integer>();
-        ArrayList<Integer> list = new ArrayList<>();
-        String result = "";
+        Map<Character, Integer> lookup = new HashMap<>();
         
-        for(int i = 0; i < s.length(); i++){
-            char curChar = s.charAt(i);
-            
-            if (lookup.containsKey(curChar)){
-                lookup.put(curChar,lookup.get(curChar)+1);
-            }else
-                lookup.put(curChar,1);
-            }
-        
-        //LinkedHashMap preserve the ordering of elements in which they are inserted
-        LinkedHashMap<Character, Integer> reverseSortedMap = new LinkedHashMap<>();
-
-        //Use Comparator.reverseOrder() for reverse ordering
-        lookup.entrySet()
-          .stream()
-          .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())) 
-          .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
-        
-
-        for (Character key : reverseSortedMap.keySet()) {
-            while(reverseSortedMap.get(key) != 0){
-                result += key;
-                reverseSortedMap.put(key,reverseSortedMap.get(key)-1);
+        for (char eachChar:s.toCharArray()) {
+            if (lookup.containsKey(eachChar)) {
+                lookup.put(eachChar, lookup.get(eachChar)+1);
+            } else {
+                lookup.put(eachChar, 1);
             }
         }
         
-        return result;
+        // covert map to list
+        List<Map.Entry<Character, Integer>> list = new ArrayList<>(lookup.entrySet());
+        
+        list.sort(new Comparator<>(){
+            public int compare(Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) {
+                return (o2.getValue()).compareTo(o1.getValue());
+            }
+        });
+        
+        StringBuilder result = new StringBuilder();
+        
+        for (Map.Entry<Character, Integer> entry : list) {
+            for (int i=0; i < entry.getValue(); i++) {
+                result.append(entry.getKey()); 
+            }
+        }
+
+        return result.toString();
     }
 }
