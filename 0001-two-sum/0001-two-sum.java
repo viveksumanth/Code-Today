@@ -1,19 +1,12 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int[] targetList = new int[2] ;
-        int check;
-        // System.out.println(Arrays.toString(nums));
-        // System.out.println(target);
-        Map<Integer, Integer> lookup = new HashMap<Integer, Integer>();
-        for(int idx=0; idx < nums.length; idx++){
-            check = target - nums[idx];
-            if(lookup.containsKey(check)){
-                targetList[1] = idx;
-                targetList[0] = lookup.get(check);
+        for (int i=0; i<nums.length; i++) {
+            for (int j=i+1; j<nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i,j};
+                }
             }
-            
-            lookup.put(nums[idx],idx);
         }
-        return targetList;
+        return new int[]{};
     }
 }
