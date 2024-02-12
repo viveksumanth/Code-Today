@@ -4,3 +4,5 @@ class Solution {
         return nums[nums.length/2];
     }
 }
+
+ 
