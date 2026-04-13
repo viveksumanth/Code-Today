@@ -42,4 +42,8 @@ Motive - keep track of my leetcode
 |  |
 | ------- |
 | [0572-subtree-of-another-tree](https://github.com/viveksumanth/Code-Today/tree/master/0572-subtree-of-another-tree) |
+## Array
+|  |
+| ------- |
+| [1848-minimum-distance-to-the-target-element](https://github.com/viveksumanth/Code-Today/tree/master/1848-minimum-distance-to-the-target-element) |
 <!---LeetCode Topics End-->
