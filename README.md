@@ -46,4 +46,9 @@ Motive - keep track of my leetcode
 |  |
 | ------- |
 | [1848-minimum-distance-to-the-target-element](https://github.com/viveksumanth/Code-Today/tree/master/1848-minimum-distance-to-the-target-element) |
+| [3689-maximum-total-subarray-value-i](https://github.com/viveksumanth/Code-Today/tree/master/3689-maximum-total-subarray-value-i) |
+## Greedy
+|  |
+| ------- |
+| [3689-maximum-total-subarray-value-i](https://github.com/viveksumanth/Code-Today/tree/master/3689-maximum-total-subarray-value-i) |
 <!---LeetCode Topics End-->
