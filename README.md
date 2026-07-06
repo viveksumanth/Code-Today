@@ -45,10 +45,15 @@ Motive - keep track of my leetcode
 ## Array
 |  |
 | ------- |
+| [1288-remove-covered-intervals](https://github.com/viveksumanth/Code-Today/tree/master/1288-remove-covered-intervals) |
 | [1848-minimum-distance-to-the-target-element](https://github.com/viveksumanth/Code-Today/tree/master/1848-minimum-distance-to-the-target-element) |
 | [3689-maximum-total-subarray-value-i](https://github.com/viveksumanth/Code-Today/tree/master/3689-maximum-total-subarray-value-i) |
 ## Greedy
 |  |
 | ------- |
 | [3689-maximum-total-subarray-value-i](https://github.com/viveksumanth/Code-Today/tree/master/3689-maximum-total-subarray-value-i) |
+## Sorting
+|  |
+| ------- |
+| [1288-remove-covered-intervals](https://github.com/viveksumanth/Code-Today/tree/master/1288-remove-covered-intervals) |
 <!---LeetCode Topics End-->
