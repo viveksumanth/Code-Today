@@ -37,6 +37,7 @@ Motive - keep track of my leetcode
 ## String Matching
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/viveksumanth/Code-Today/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0572-subtree-of-another-tree](https://github.com/viveksumanth/Code-Today/tree/master/0572-subtree-of-another-tree) |
 ## Hash Function
 |  |
@@ -60,4 +61,12 @@ Motive - keep track of my leetcode
 |  |
 | ------- |
 | [3754-concatenate-non-zero-digits-and-multiply-by-sum-i](https://github.com/viveksumanth/Code-Today/tree/master/3754-concatenate-non-zero-digits-and-multiply-by-sum-i) |
+## Hash Table
+|  |
+| ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/viveksumanth/Code-Today/tree/master/0003-longest-substring-without-repeating-characters) |
+## Sliding Window
+|  |
+| ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/viveksumanth/Code-Today/tree/master/0003-longest-substring-without-repeating-characters) |
 <!---LeetCode Topics End-->
