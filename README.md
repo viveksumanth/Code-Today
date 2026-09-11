@@ -48,6 +48,7 @@ Motive - keep track of my leetcode
 | ------- |
 | [1288-remove-covered-intervals](https://github.com/viveksumanth/Code-Today/tree/master/1288-remove-covered-intervals) |
 | [1848-minimum-distance-to-the-target-element](https://github.com/viveksumanth/Code-Today/tree/master/1848-minimum-distance-to-the-target-element) |
+| [3483-unique-3-digit-even-numbers](https://github.com/viveksumanth/Code-Today/tree/master/3483-unique-3-digit-even-numbers) |
 | [3689-maximum-total-subarray-value-i](https://github.com/viveksumanth/Code-Today/tree/master/3689-maximum-total-subarray-value-i) |
 | [3903-smallest-stable-index-i](https://github.com/viveksumanth/Code-Today/tree/master/3903-smallest-stable-index-i) |
 ## Greedy
@@ -66,6 +67,7 @@ Motive - keep track of my leetcode
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/viveksumanth/Code-Today/tree/master/0003-longest-substring-without-repeating-characters) |
+| [3483-unique-3-digit-even-numbers](https://github.com/viveksumanth/Code-Today/tree/master/3483-unique-3-digit-even-numbers) |
 ## Sliding Window
 |  |
 | ------- |
@@ -74,4 +76,12 @@ Motive - keep track of my leetcode
 |  |
 | ------- |
 | [3903-smallest-stable-index-i](https://github.com/viveksumanth/Code-Today/tree/master/3903-smallest-stable-index-i) |
+## Recursion
+|  |
+| ------- |
+| [3483-unique-3-digit-even-numbers](https://github.com/viveksumanth/Code-Today/tree/master/3483-unique-3-digit-even-numbers) |
+## Enumeration
+|  |
+| ------- |
+| [3483-unique-3-digit-even-numbers](https://github.com/viveksumanth/Code-Today/tree/master/3483-unique-3-digit-even-numbers) |
 <!---LeetCode Topics End-->
