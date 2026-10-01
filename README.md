@@ -14,6 +14,7 @@ Motive - keep track of my leetcode
 | [0104-maximum-depth-of-binary-tree](https://github.com/viveksumanth/Code-Today/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0145-binary-tree-postorder-traversal](https://github.com/viveksumanth/Code-Today/tree/master/0145-binary-tree-postorder-traversal) |
 | [0226-invert-binary-tree](https://github.com/viveksumanth/Code-Today/tree/master/0226-invert-binary-tree) |
+| [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
 | [0572-subtree-of-another-tree](https://github.com/viveksumanth/Code-Today/tree/master/0572-subtree-of-another-tree) |
 ## Depth-First Search
 |  |
@@ -21,6 +22,7 @@ Motive - keep track of my leetcode
 | [0104-maximum-depth-of-binary-tree](https://github.com/viveksumanth/Code-Today/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0145-binary-tree-postorder-traversal](https://github.com/viveksumanth/Code-Today/tree/master/0145-binary-tree-postorder-traversal) |
 | [0226-invert-binary-tree](https://github.com/viveksumanth/Code-Today/tree/master/0226-invert-binary-tree) |
+| [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
 | [0572-subtree-of-another-tree](https://github.com/viveksumanth/Code-Today/tree/master/0572-subtree-of-another-tree) |
 ## Binary Tree
 |  |
@@ -28,6 +30,7 @@ Motive - keep track of my leetcode
 | [0104-maximum-depth-of-binary-tree](https://github.com/viveksumanth/Code-Today/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0145-binary-tree-postorder-traversal](https://github.com/viveksumanth/Code-Today/tree/master/0145-binary-tree-postorder-traversal) |
 | [0226-invert-binary-tree](https://github.com/viveksumanth/Code-Today/tree/master/0226-invert-binary-tree) |
+| [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
 | [0572-subtree-of-another-tree](https://github.com/viveksumanth/Code-Today/tree/master/0572-subtree-of-another-tree) |
 ## Breadth-First Search
 |  |
@@ -38,6 +41,7 @@ Motive - keep track of my leetcode
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/viveksumanth/Code-Today/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
 | [0572-subtree-of-another-tree](https://github.com/viveksumanth/Code-Today/tree/master/0572-subtree-of-another-tree) |
 ## Hash Function
 |  |
@@ -84,4 +88,8 @@ Motive - keep track of my leetcode
 |  |
 | ------- |
 | [3483-unique-3-digit-even-numbers](https://github.com/viveksumanth/Code-Today/tree/master/3483-unique-3-digit-even-numbers) |
+## Backtracking
+|  |
+| ------- |
+| [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
 <!---LeetCode Topics End-->
