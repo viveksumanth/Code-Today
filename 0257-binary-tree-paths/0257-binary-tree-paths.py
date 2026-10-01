@@ -9,13 +9,21 @@ class Solution:
         self.result = []
     
     def binaryTreePaths(self, root: TreeNode | None, currentResult='') -> list[str]:
-        if root.left == None and root.right == None:
-            self.result.append(currentResult + str(root.val))
-            return self.result
+        currResult = []
+        result = []
+        def dfs(root):
+            if root.left == None and root.right == None:
+                currResult.append(str(root.val))
+                result.append('->'.join(currResult))
+                return result
         
-        currentResult = currentResult + str(root.val) + '->'
-        for each in [root.left, root.right]:
-            if each != None: 
-                self.binaryTreePaths(each, currentResult)
+            currResult.append(str(root.val))
+            for each in [root.left, root.right]:
+                if each != None: 
+                    dfs(each)
+                    currResult.pop()
         
-        return self.result
+            return result
+        dfs(root)
+        return result
+
