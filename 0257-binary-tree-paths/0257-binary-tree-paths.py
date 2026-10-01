@@ -9,6 +9,9 @@ class Solution:
         currResult = []
         result = []
         def dfs(root):
+            if root is None: 
+                return result
+                
             if root.left is None and root.right is None:
                 currResult.append(str(root.val))
                 result.append('->'.join(currResult))
@@ -16,7 +19,7 @@ class Solution:
         
             currResult.append(str(root.val))
             for each in [root.left, root.right]:
-                if each != None: 
+                if each is not None: 
                     dfs(each)
                     currResult.pop()
         
