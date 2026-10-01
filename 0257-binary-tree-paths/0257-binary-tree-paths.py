@@ -5,14 +5,11 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def __init__(self):
-        self.result = []
-    
     def binaryTreePaths(self, root: TreeNode | None, currentResult='') -> list[str]:
         currResult = []
         result = []
         def dfs(root):
-            if root.left == None and root.right == None:
+            if root.left is None and root.right is None:
                 currResult.append(str(root.val))
                 result.append('->'.join(currResult))
                 return result
