@@ -5,32 +5,17 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def getChildren(self, root):
-        children = []
-        if root == None:
-            return children
-        
-        children.append(root.left) if root.left else None
-        children.append(root.right) if root.right else None
-        return children
+    def __init__(self):
+        self.result = []
     
-    def dfs(self, root, result, currentState):
+    def binaryTreePaths(self, root: TreeNode | None, currentResult='') -> list[str]:
         if root.left == None and root.right == None:
-            resultString = "->".join(currentState[:])
-            result.append(resultString)
-            return
+            self.result.append(currentResult + str(root.val))
+            return self.result
         
-        for eachChild in self.getChildren(root):
-            currentState.append(str(eachChild.val))
-            self.dfs(eachChild, result, currentState)
-            currentState.pop()
+        currentResult = currentResult + str(root.val) + '->'
+        for each in [root.left, root.right]:
+            if each != None: 
+                self.binaryTreePaths(each, currentResult)
         
-        return 
-            
-        
-    def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
-        if root == None:
-            return []
-        result = []
-        self.dfs(root, result, [str(root.val)])
-        return result
+        return self.result
