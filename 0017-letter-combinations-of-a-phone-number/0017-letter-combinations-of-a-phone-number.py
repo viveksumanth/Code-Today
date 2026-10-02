@@ -1,42 +1,39 @@
 class Solution:
-    def letterCombinationsHelper(self, validStates, combinations, currentState, prevState):
-        if len(currentState) == len(validStates):
-            combinations.append("".join(currentState))
-            return 
-        
-        for eachLetter in validStates[prevState]:
-            currentState.append(eachLetter)
-            prevState += 1
-            self.letterCombinationsHelper(validStates, combinations, currentState, prevState)
-            prevState -= 1
-            currentState.pop()
-        
-        return
-      
-    
-    def letterCombinations(self, digits: str) -> List[str]:
-        if len(digits) == 0:
-            return []
-        
-        lookup = {
-            "":[],
-            "2":["a", "b", "c"],
-            "3":["d", "e", "f"],
-            "4":["g", "h", "i"],
-            "5":["j", "k", "l"],
-            "6":["m", "n", "o"],
-            "7":["p", "q", "r", "s"],
-            "8":["t", "u", "v"],
-            "9":["w", "x", "y", "z"]
+    def __init__(self):
+        self.lookup = {
+            '2': 'abc',
+            '3': 'def',
+            '4': 'ghi',
+            '5': 'jkl',
+            '6': 'mno',
+            '7': 'pqrs',
+            '8': 'tuv',
+            '9': 'wxyz'
         }
+        self.curResult = []
+        self.result = []
+
+    def letterCombinations(self, digits: str) -> list[str]:
+        if len(digits) != 0:
+            self.dfs(digits)
+        return self.result
+    
+    def dfs(self, digits, level=0):
+        if  len(self.curResult) == len(digits):
+            resultString = ''.join(self.curResult)
+            self.result.append(resultString)
+            return
         
-        combinations = []
-        validStates = []
-        
-        for eachDigit in digits:
-            validStates.append(lookup[eachDigit])
-        self.letterCombinationsHelper(validStates, combinations, [], 0)
-        
-        return combinations
-        
+        for each in digits[level]:
+            for eachLetter in self.lookup[each]:
+                level += 1
+                self.curResult.append(eachLetter)
+                self.dfs(digits, level)
+                self.curResult.pop()
+                level -= 1
+        return
+
+                
+            
+
         
