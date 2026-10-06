@@ -42,6 +42,7 @@ Motive - keep track of my leetcode
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/viveksumanth/Code-Today/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/viveksumanth/Code-Today/tree/master/0017-letter-combinations-of-a-phone-number) |
+| [0131-palindrome-partitioning](https://github.com/viveksumanth/Code-Today/tree/master/0131-palindrome-partitioning) |
 | [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
 | [0572-subtree-of-another-tree](https://github.com/viveksumanth/Code-Today/tree/master/0572-subtree-of-another-tree) |
 ## Hash Function
@@ -94,5 +95,10 @@ Motive - keep track of my leetcode
 |  |
 | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/viveksumanth/Code-Today/tree/master/0017-letter-combinations-of-a-phone-number) |
+| [0131-palindrome-partitioning](https://github.com/viveksumanth/Code-Today/tree/master/0131-palindrome-partitioning) |
 | [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0131-palindrome-partitioning](https://github.com/viveksumanth/Code-Today/tree/master/0131-palindrome-partitioning) |
 <!---LeetCode Topics End-->
