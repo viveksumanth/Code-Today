@@ -8,6 +8,7 @@ Motive - keep track of my leetcode
 |  |
 | ------- |
 | [0145-binary-tree-postorder-traversal](https://github.com/viveksumanth/Code-Today/tree/master/0145-binary-tree-postorder-traversal) |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/viveksumanth/Code-Today/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 ## Tree
 |  |
 | ------- |
@@ -45,6 +46,7 @@ Motive - keep track of my leetcode
 | [0131-palindrome-partitioning](https://github.com/viveksumanth/Code-Today/tree/master/0131-palindrome-partitioning) |
 | [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
 | [0572-subtree-of-another-tree](https://github.com/viveksumanth/Code-Today/tree/master/0572-subtree-of-another-tree) |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/viveksumanth/Code-Today/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 ## Hash Function
 |  |
 | ------- |
@@ -60,6 +62,7 @@ Motive - keep track of my leetcode
 ## Greedy
 |  |
 | ------- |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/viveksumanth/Code-Today/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 | [3689-maximum-total-subarray-value-i](https://github.com/viveksumanth/Code-Today/tree/master/3689-maximum-total-subarray-value-i) |
 ## Sorting
 |  |
@@ -101,4 +104,8 @@ Motive - keep track of my leetcode
 |  |
 | ------- |
 | [0131-palindrome-partitioning](https://github.com/viveksumanth/Code-Today/tree/master/0131-palindrome-partitioning) |
+## Bracket Sequences
+|  |
+| ------- |
+| [0921-minimum-add-to-make-parentheses-valid](https://github.com/viveksumanth/Code-Today/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 <!---LeetCode Topics End-->
