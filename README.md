@@ -43,6 +43,7 @@ Motive - keep track of my leetcode
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/viveksumanth/Code-Today/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/viveksumanth/Code-Today/tree/master/0017-letter-combinations-of-a-phone-number) |
+| [0022-generate-parentheses](https://github.com/viveksumanth/Code-Today/tree/master/0022-generate-parentheses) |
 | [0093-restore-ip-addresses](https://github.com/viveksumanth/Code-Today/tree/master/0093-restore-ip-addresses) |
 | [0131-palindrome-partitioning](https://github.com/viveksumanth/Code-Today/tree/master/0131-palindrome-partitioning) |
 | [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
@@ -99,15 +100,18 @@ Motive - keep track of my leetcode
 |  |
 | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/viveksumanth/Code-Today/tree/master/0017-letter-combinations-of-a-phone-number) |
+| [0022-generate-parentheses](https://github.com/viveksumanth/Code-Today/tree/master/0022-generate-parentheses) |
 | [0093-restore-ip-addresses](https://github.com/viveksumanth/Code-Today/tree/master/0093-restore-ip-addresses) |
 | [0131-palindrome-partitioning](https://github.com/viveksumanth/Code-Today/tree/master/0131-palindrome-partitioning) |
 | [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
 ## Dynamic Programming
 |  |
 | ------- |
+| [0022-generate-parentheses](https://github.com/viveksumanth/Code-Today/tree/master/0022-generate-parentheses) |
 | [0131-palindrome-partitioning](https://github.com/viveksumanth/Code-Today/tree/master/0131-palindrome-partitioning) |
 ## Bracket Sequences
 |  |
 | ------- |
+| [0022-generate-parentheses](https://github.com/viveksumanth/Code-Today/tree/master/0022-generate-parentheses) |
 | [0921-minimum-add-to-make-parentheses-valid](https://github.com/viveksumanth/Code-Today/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 <!---LeetCode Topics End-->
