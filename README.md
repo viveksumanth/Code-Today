@@ -49,6 +49,7 @@ Motive - keep track of my leetcode
 | [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
 | [0572-subtree-of-another-tree](https://github.com/viveksumanth/Code-Today/tree/master/0572-subtree-of-another-tree) |
 | [0921-minimum-add-to-make-parentheses-valid](https://github.com/viveksumanth/Code-Today/tree/master/0921-minimum-add-to-make-parentheses-valid) |
+| [1593-split-a-string-into-the-max-number-of-unique-substrings](https://github.com/viveksumanth/Code-Today/tree/master/1593-split-a-string-into-the-max-number-of-unique-substrings) |
 ## Hash Function
 |  |
 | ------- |
@@ -79,6 +80,7 @@ Motive - keep track of my leetcode
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/viveksumanth/Code-Today/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/viveksumanth/Code-Today/tree/master/0017-letter-combinations-of-a-phone-number) |
+| [1593-split-a-string-into-the-max-number-of-unique-substrings](https://github.com/viveksumanth/Code-Today/tree/master/1593-split-a-string-into-the-max-number-of-unique-substrings) |
 | [3483-unique-3-digit-even-numbers](https://github.com/viveksumanth/Code-Today/tree/master/3483-unique-3-digit-even-numbers) |
 ## Sliding Window
 |  |
@@ -104,6 +106,7 @@ Motive - keep track of my leetcode
 | [0093-restore-ip-addresses](https://github.com/viveksumanth/Code-Today/tree/master/0093-restore-ip-addresses) |
 | [0131-palindrome-partitioning](https://github.com/viveksumanth/Code-Today/tree/master/0131-palindrome-partitioning) |
 | [0257-binary-tree-paths](https://github.com/viveksumanth/Code-Today/tree/master/0257-binary-tree-paths) |
+| [1593-split-a-string-into-the-max-number-of-unique-substrings](https://github.com/viveksumanth/Code-Today/tree/master/1593-split-a-string-into-the-max-number-of-unique-substrings) |
 ## Dynamic Programming
 |  |
 | ------- |
