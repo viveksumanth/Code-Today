@@ -1,7 +1,7 @@
 class Solution:
     def maxUniqueSplit(self, s: str) -> int:
         startIdx = 0
-        resultSet = []
+        resultSet = set()
 
         def dfs(s, startIdx, maxLength):
             if startIdx == len(s):
@@ -12,9 +12,9 @@ class Solution:
                 if newSubString in resultSet:
                     continue
                 
-                resultSet.append(newSubString)
+                resultSet.add(newSubString)
                 maxLength = max(dfs(s, eachIdx+1, maxLength), maxLength)
-                resultSet.pop()
+                resultSet.remove(newSubString)
             return maxLength
         
         return dfs(s, 0, 0) 
