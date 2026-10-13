@@ -61,16 +61,19 @@ Motive - keep track of my leetcode
 | [1848-minimum-distance-to-the-target-element](https://github.com/viveksumanth/Code-Today/tree/master/1848-minimum-distance-to-the-target-element) |
 | [3483-unique-3-digit-even-numbers](https://github.com/viveksumanth/Code-Today/tree/master/3483-unique-3-digit-even-numbers) |
 | [3689-maximum-total-subarray-value-i](https://github.com/viveksumanth/Code-Today/tree/master/3689-maximum-total-subarray-value-i) |
+| [3727-maximum-alternating-sum-of-squares](https://github.com/viveksumanth/Code-Today/tree/master/3727-maximum-alternating-sum-of-squares) |
 | [3903-smallest-stable-index-i](https://github.com/viveksumanth/Code-Today/tree/master/3903-smallest-stable-index-i) |
 ## Greedy
 |  |
 | ------- |
 | [0921-minimum-add-to-make-parentheses-valid](https://github.com/viveksumanth/Code-Today/tree/master/0921-minimum-add-to-make-parentheses-valid) |
 | [3689-maximum-total-subarray-value-i](https://github.com/viveksumanth/Code-Today/tree/master/3689-maximum-total-subarray-value-i) |
+| [3727-maximum-alternating-sum-of-squares](https://github.com/viveksumanth/Code-Today/tree/master/3727-maximum-alternating-sum-of-squares) |
 ## Sorting
 |  |
 | ------- |
 | [1288-remove-covered-intervals](https://github.com/viveksumanth/Code-Today/tree/master/1288-remove-covered-intervals) |
+| [3727-maximum-alternating-sum-of-squares](https://github.com/viveksumanth/Code-Today/tree/master/3727-maximum-alternating-sum-of-squares) |
 ## Math
 |  |
 | ------- |
